@@ -1,57 +1,51 @@
 <!DOCTYPE html>
-   <html>
-      <head lang="fr">
-      <meta charset="utf-8"/>
-      <title>C.V GÉNÉRATOR</title>
-        </head>
-       
-   <body>
-      
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Générateur de CV</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body class="bg-light">
 
-    <header>
-      <h1>Générateur de c.v</h1>
-      <p>remplissez le formulaire pour créer votre c.v</p>
-    </header>
-
-         <div> 
-            <H2> INFORMATIONS GÉNÉRALES </H2>
-            
-            <label for="votre nom"> Entrez votre nom </label>
-            <input type="text" placeholder="votre nom" required> <br><br>
-            
-            <label for="votre prénom"> Entrez votre prénom </label>
-            <input type="text" placeholder="votre prénom"required> <br><br>
-            
-            <label for="email"> Entrez votre email </label>
-            <input type="email" placeholder="votre email"required> <br><br>
-            
-            <label for="votre âge"> Entrez votre age </label>
-            <input type="text" placeholder="votre âge"> <br><br>
-           
-            <label for="votre téléphone"> Entrez votre téléphone </label>
-            <input type="text" placeholder="votre téléphone"required> <br><br>
-           
-            <label for="votre titre professionel"> Entrez votre titre professionel </label>
-            <input type="text" placeholder="votre titre professionel"> <br><br>         
-
-           
-            <textarea name="description" id=""></textarea>
-
-
-      
-
- 
-            
-            
-         
-         
-         </div> 
-
-
-
-
-
-
-        </body>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Générateur de CV</h1>
+    <div class="row">
         
+        <div class="col-md-6">
+            <form id="cvForm">
+                
+                <input class="form-control mb-2" type="text" id="nom" placeholder="Nom" required>
+               
+                <input class="form-control mb-2" type="text" id="prenom" placeholder="Prénom" required>
+                
+                <input class="form-control mb-2" type="email" id="email" placeholder="Email">
+
+                <input class="form-control mb-2" type="text" id="telephone" placeholder="Téléphone">
+                
+                <textarea class="form-control mb-2" id="profil" placeholder="Profil professionnel"></textarea>
+               
+                <textarea class="form-control mb-2" id="experience" placeholder="Expérience"></textarea>
+                
+                <textarea class="form-control mb-2" id="formation" placeholder="Formation"></textarea>
+                <div class="mb-2">
+    <label class="form-label">Compétences</label>
+    <div id="competencesContainer"></div>
+    <div class="d-flex gap-2 mt-2">
+        <button type="button" class="btn" onclick="ajouterCompetence()">+ Ajouter</button>
+        <button type="button" class="btn" onclick="supprimerCompetence()">− Supprimer</button>
+    </div>
+</div>
+                <button type="button" class="btn btn-primary w-100" onclick="telechargerPDF()">Télécharger en PDF</button>
+            </form>
+        </div>
+
+        <div class="col-md-6">
+            <div id="preview" class="p-3 bg-white shadow"></div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>
